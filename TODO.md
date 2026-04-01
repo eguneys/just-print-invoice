@@ -1,0 +1,6 @@
+- [ ] Responsive Website
+- [ ] Link to Github
+- [ ] Terms of Service
+- [ ] Privacy Policy
+- [ ] Test it out
+- [ ] Apply for Google Ads
