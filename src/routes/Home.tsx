@@ -34,12 +34,12 @@ export default function Home() {
 
     return (<>
     <div class='flex flex-col'>
-        <div class='h-[50px] flex bg-pink-400 p-3 drop-shadow-lg drop-shadow-cyan-500/50 justify-center'>
-        <div class='text-cyan-50 font-bold text-xl'>
+        <header role="banner" class='h-[90px] flex bg-pink-900 p-3 drop-shadow-lg drop-shadow-cyan-500/50 justify-center'>
+        <nav role="navigation" class='text-cyan-50 font-bold text-5xl self-center'>
             Just Print Invoice
-        </div>
-        </div>
-        <div class='flex flex-1 flex-col lg:flex-row bg-gray-200'>
+        </nav>
+        </header>
+        <main role="main" class='flex flex-1 flex-col lg:flex-row bg-gray-200'>
                 <div class='flex bg-gray-900 text-white self-center'>
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8375052900987944"
                         crossorigin="anonymous"></script>
@@ -63,9 +63,9 @@ export default function Home() {
                     <input autocomplete="false" id="Recipient" class='border rounded-sm  text-xl p-2' type='text' title='Recipient Title' placeholder="Recipient Title" value={state.recipient_title} onInput={e => set_recipient_title(e.target.value)}></input>
                     <span class='text-xs'>Recipient Address:</span>
                     <textarea id="RecipientAddress" rows={5} class='border rounded-sm  text-xl p-2 resize-none' title='Recipient Address' placeholder="Recipient Address" value={state.recipient_address} onInput={e => set_recipient_address(e.target.value)}></textarea>
-                    <div class='flex gap-2 justify-end'>
+                    <div class='flex gap-2 justify-end flex-col lg:flex-row'>
                         <div class="flex-1"></div>
-                        <div class='flex p-2 bg-blue-400 rounded'>
+                        <div class='flex p-2 flex-row bg-blue-400 rounded'>
                             <label class='self-center'>Date:</label>
                             <input class='cursor-pointer p-2' id="Date" type='date' title='Date' value={state.date.toISOString().split('T')[0]} onInput={e => set_date(new Date(e.target.value)) }></input>
                         </div>
@@ -108,7 +108,7 @@ export default function Home() {
                         (adsbygoogle = window.adsbygoogle || []).push({ });
                     </script>
             </div>
-            <div class='h-[calc(100vh-50px)] flex preview flex-1 flex-col'>
+            <div class='h-[calc(100vh-90px)] flex preview flex-1 flex-col'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Preview</h2>
                 <div class=' overflow-auto flex-1 flex flex-col gap-7 border m-5 rounded-xs bg-white p-5 text-slate-800'>
                     <div class='flex justify-between'>
@@ -163,10 +163,10 @@ export default function Home() {
                     </div>
                 </div>
                 <div class='flex p-5 justify-center'>
-                    <button class="hover:underline hover:bg-emerald-600 font-bold text-slate-100 text-xl bg-emerald-500 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
+                    <button class="cursor-pointer hover:underline hover:bg-emerald-700 font-bold text-slate-100 text-xl bg-emerald-800 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
                 </div>
             </div>
-        </div>
+        </main>
 </div>
     </>)
 }
