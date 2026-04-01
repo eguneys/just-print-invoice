@@ -35,7 +35,7 @@ export default function Home() {
     return (<>
     <div class='flex flex-col'>
         <header role="banner" class='h-[90px] flex bg-pink-900 p-3 drop-shadow-lg drop-shadow-cyan-500/50 justify-center'>
-        <nav role="navigation" class='text-cyan-50 font-bold text-5xl self-center'>
+        <nav role="navigation" class='text-cyan-50 font-bold text-3xl md:text-4xl lg:text-5xl self-center'>
             Just Print Invoice
         </nav>
         </header>
