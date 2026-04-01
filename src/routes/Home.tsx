@@ -31,7 +31,16 @@ export default function Home() {
 
 
     return (<>
-        <div class='flex flex-row bg-gray-200 h-screen'>
+    <div class='flex flex-col'>
+        <div class='h-[50px] flex bg-pink-400 p-3 drop-shadow-lg drop-shadow-cyan-500/50 justify-center'>
+        <div class='text-cyan-50 font-bold text-xl'>
+            Just Print Invoice
+        </div>
+        </div>
+        <div class='flex flex-1 flex-row bg-gray-200'>
+            <div class='flex w-[160px] h-[600px] bg-gray-900 text-white self-center'>
+                <span class='m-auto'>Ads Area</span>
+            </div>
             <div class='fields flex-1'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Fields</h2>
                 <div class='flex flex-col gap-2 p-5'>
@@ -43,11 +52,11 @@ export default function Home() {
                     <textarea id="RecipientAddress" rows={5} class='border rounded-sm  text-xl p-2 resize-none' title='Recipient Address' placeholder="Recipient Address" value={state.recipient_address} onInput={e => set_recipient_address(e.target.value)}></textarea>
                     <div class='flex gap-2 justify-end'>
                         <div class="flex-1"></div>
-                        <div class='p-2 bg-blue-400 rounded'>
+                        <div class='flex p-2 bg-blue-400 rounded'>
                             <label class='self-center'>Date:</label>
                             <input class='cursor-pointer p-2' id="Date" type='date' title='Date' value={state.date.toISOString().split('T')[0]} onInput={e => set_date(new Date(e.target.value)) }></input>
                         </div>
-                        <div class='p-2 bg-yellow-600 rounded'>
+                        <div class='flex p-2 bg-yellow-600 rounded'>
                             <label class='self-center'>Due Date:</label>
                             <input class='cursor-pointer p-2' id="DueDate" type='date' title='Due Date' value={state.due_date.toISOString().split('T')[0]} onInput={e => set_due_date(new Date(e.target.value))}></input>
                         </div>
@@ -72,9 +81,12 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div class='flex preview flex-1 flex-col'>
+            <div class='flex w-[160px] h-[600px] bg-gray-900 text-white self-center'>
+                <span class='m-auto'>Ads Area</span>
+            </div>
+            <div class='h-[calc(100vh-50px)] flex preview flex-1 flex-col'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Preview</h2>
-                <div class='overflow-auto flex-1 flex flex-col gap-7 border m-5 rounded-xs bg-white p-5 text-slate-800'>
+                <div class=' overflow-auto flex-1 flex flex-col gap-7 border m-5 rounded-xs bg-white p-5 text-slate-800'>
                     <div class='flex justify-between'>
                         <h3 class='text-2xl font-bold'>{state.name === '' ? 'Your Name' : state.name}</h3>
                         <div class='flex flex-col'>
@@ -90,12 +102,11 @@ export default function Home() {
                                 <p class='text-wrap w-70 whitespace-pre-wrap'>{state.recipient_address === '' ? 'Recipient Address' : state.recipient_address}</p>
                             </div>
                         </div>
-                        <div class='flex-1'></div>
-                        <div class='flex-2 flex justify-between'>
+                        <div class='flex-2 flex gap-5 justify-end'>
                             <div class='flex flex-col'>
-                                <label class='text-gray-700'>Date:</label>
-                                <label class='text-gray-700'>Due Date:</label>
-                                <label class='mt-1 font-bold text-xl'>Balance Due:</label>
+                                <label class='text-gray-700 self-end'>Date:</label>
+                                <label class='text-gray-700 self-end'>Due Date:</label>
+                                <label class='mt-1 font-bold text-xl self-end'>Balance Due:</label>
                             </div>
                             <div class='flex flex-col'>
                                 <span class='self-end'>{state.date.toString().split(' ').slice(0, 4).join(' ')}</span>
@@ -132,5 +143,6 @@ export default function Home() {
                 </div>
             </div>
         </div>
+</div>
     </>)
 }

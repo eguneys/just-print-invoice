@@ -23,14 +23,13 @@ export default function Print() {
                         <p class='text-wrap w-70 whitespace-pre-wrap'>{state.recipient_address === '' ? 'Recipient Address' : state.recipient_address}</p>
                     </div>
                 </div>
-                <div class='flex-1'></div>
-                <div class='flex-2 flex justify-between'>
-                    <div class='flex flex-col'>
-                        <label class='text-gray-700'>Date:</label>
-                        <label class='text-gray-700'>Due Date:</label>
-                        <label class='mt-3 font-bold text-xl'>Balance Due:</label>
+                <div class='flex-2 flex justify-end gap-15'>
+                    <div class='flex flex-col gap-2'>
+                        <label class='text-gray-700 self-end'>Date:</label>
+                        <label class='text-gray-700 self-end'>Due Date:</label>
+                        <label class='mt-3 font-bold text-xl self-end'>Balance Due:</label>
                     </div>
-                    <div class='flex flex-col'>
+                    <div class='flex flex-col gap-2'>
                         <span class='self-end'>{state.date.toString().split(' ').slice(0, 4).join(' ')}</span>
                         <span class='font-bold self-end'>{state.due_date.toString().split(' ').slice(0, 4).join(' ')}</span>
                         <span class='mt-3 font-bold text-xl self-end'>{format_currency(state.balance_due)}</span>
@@ -45,7 +44,7 @@ export default function Print() {
                     <span class='flex-2'>Amount</span>
                 </div>
                 <div class='flex-1'>
-                    <For each={state.items}>{(item, i) =>
+                    <For each={state.items}>{(item) =>
                         <div class='cursor-pointer flex gap-5 py-2 px-4 rounded'>
                             <span class='flex-10 font-bold'>{item.title}</span>
                             <span class='flex-2'>{item.quantity}</span>
