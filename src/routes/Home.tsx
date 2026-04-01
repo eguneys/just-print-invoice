@@ -1,4 +1,3 @@
-import { A } from "@solidjs/router";
 import { For } from "solid-js";
 import { useState } from "../state/State";
 
@@ -29,6 +28,9 @@ export default function Home() {
         remove_item
     }} ] = useState()
 
+    const goto_print_page = () => {
+        window.location.assign('/print')
+    }
 
     return (<>
     <div class='flex flex-col'>
@@ -37,9 +39,20 @@ export default function Home() {
             Just Print Invoice
         </div>
         </div>
-        <div class='flex flex-1 flex-row bg-gray-200'>
-            <div class='flex w-[160px] h-[600px] bg-gray-900 text-white self-center'>
-                <span class='m-auto'>Ads Area</span>
+        <div class='flex flex-1 flex-col lg:flex-row bg-gray-200'>
+                <div class='flex bg-gray-900 text-white self-center'>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8375052900987944"
+                        crossorigin="anonymous"></script>
+                    {/*<!-- side-left -->*/}
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8375052900987944"
+                        data-ad-slot="1370398970"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({ });
+                    </script>
             </div>
             <div class='fields flex-1'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Fields</h2>
@@ -81,8 +94,19 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div class='flex w-[160px] h-[600px] bg-gray-900 text-white self-center'>
-                <span class='m-auto'>Ads Area</span>
+                <div class='flex bg-gray-900 text-white self-center'>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8375052900987944"
+                        crossorigin="anonymous"></script>
+                    {/*<!-- side-left -->*/}
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8375052900987944"
+                        data-ad-slot="1370398970"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({ });
+                    </script>
             </div>
             <div class='h-[calc(100vh-50px)] flex preview flex-1 flex-col'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Preview</h2>
@@ -139,7 +163,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div class='flex p-5 justify-center'>
-                    <A class="hover:underline hover:bg-emerald-600 font-bold text-slate-100 text-xl bg-emerald-500 px-3 py-2 rounded-sm" href="/print">Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></A>
+                    <button class="hover:underline hover:bg-emerald-600 font-bold text-slate-100 text-xl bg-emerald-500 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
                 </div>
             </div>
         </div>

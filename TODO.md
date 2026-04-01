@@ -1,6 +1,8 @@
 - [ ] Responsive Website
+- [ ] Seo index.html
 - [ ] Link to Github
 - [ ] Terms of Service
 - [ ] Privacy Policy
 - [ ] Test it out
+- [ ] Add ads.txt
 - [ ] Apply for Google Ads
