@@ -2,12 +2,12 @@
 - [x] Seo index.html
 - [x] Create Logo public/logo-big.png
 - [x] Add ads.txt
-- [ ] Link to Github
-- [ ] Terms of Service
-- [ ] Privacy Policy
-- [ ] Test it out
+- [x] Link to Github
+- [x] Terms of Service
+- [x] Privacy Policy
 - [ ] Get organic traffic
 - [ ] Marketing Publish on Reddit
+- [ ] Test it out
 - [ ] Apply for Google Ads
 
 
