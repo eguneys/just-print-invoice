@@ -39,7 +39,7 @@ export default function Home() {
             Just Print Invoice
         </nav>
         </header>
-        <main role="main" class='min-h-[calc(100vh-90px)] flex flex-1 flex-col md:flex-row bg-gray-200'>
+        <main role="main" class='min-h-[calc(100vh-90px)] flex flex-1 flex-col xl:flex-row bg-gray-200'>
                 <div class='flex bg-gray-900 text-white self-center'>
                     {/*
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8375052900987944"
@@ -64,7 +64,7 @@ export default function Home() {
                     <input autocomplete="false" id="Recipient" class='border rounded-sm  text-xl p-2' type='text' title='Recipient Title' placeholder="Recipient Title" value={state.recipient_title} onInput={e => set_recipient_title(e.target.value)}></input>
                     <span class='text-xs'>Recipient Address:</span>
                     <textarea id="RecipientAddress" rows={5} class='border rounded-sm  text-xl p-2 resize-none' title='Recipient Address' placeholder="Recipient Address" value={state.recipient_address} onInput={e => set_recipient_address(e.target.value)}></textarea>
-                    <div class='flex gap-2 justify-end flex-col md:flex-row'>
+                    <div class='flex gap-2 justify-end flex-col xl:flex-row'>
                         <div class="flex-1"></div>
                         <div class='flex p-2 flex-row bg-blue-400 rounded'>
                             <label class='self-center'>Date:</label>
@@ -110,61 +110,63 @@ export default function Home() {
                     </script>
                     */}
                 </div>
-            <div class='h-199 min-w-160 flex preview flex-1 flex-col'>
-                <h2 class='text-center font-bold text-2xl text-slate-800'>Preview</h2>
-                <div class='overflow-auto flex-1 flex flex-col gap-7 border m-5 rounded-xs bg-white p-5 text-slate-800'>
-                    <div class='flex justify-between'>
-                        <h3 class='text-2xl font-bold'>{state.name === '' ? 'Your Name' : state.name}</h3>
-                        <div class='flex flex-col'>
-                            <h2 class='text-4xl'>INVOICE</h2>
-                            <span class='self-end text-xl text-gray-700'>#{state.invoice_no}</span>
-                        </div>
-                    </div>
-                    <div class='flex justify-between'>
-                        <div>
-                            <h2 class='text-gray-700'>Bill To:</h2>
-                            <div>
-                                <h2 class='font-bold'>{state.recipient_title === '' ? 'Recipient Title' : state.recipient_title}</h2>
-                                <p class='text-wrap w-70 whitespace-pre-wrap'>{state.recipient_address === '' ? 'Recipient Address' : state.recipient_address}</p>
-                            </div>
-                        </div>
-                        <div class='flex-2 flex gap-5 justify-end'>
-                            <div class='flex flex-col'>
-                                <label class='text-gray-700 self-end'>Date:</label>
-                                <label class='text-gray-700 self-end'>Due Date:</label>
-                                <label class='mt-1 font-bold text-lg self-end'>Balance Due:</label>
-                            </div>
-                            <div class='flex flex-col'>
-                                <span class='self-end'>{state.date.toString().split(' ').slice(0, 4).join(' ')}</span>
-                                <span class='font-bold self-end'>{state.due_date.toString().split(' ').slice(0, 4).join(' ')}</span>
-                                <span class='mt-1 font-bold text-lg self-end'>{format_currency(state.balance_due)}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='flex flex-col'>
-                        <div class='flex bg-gray-900 text-white gap-5 py-2 px-5 rounded'>
-                            <span class='flex-10'>Item</span>
-                            <span class='flex-2'>Quantity</span>
-                            <span class='flex-2 border-r pl-1'>Rate</span>
-                            <span class='flex-2'>Amount</span>
-                        </div>
-                        <div class='flex-1'>
-                            <For each={state.items}>{(item, i) =>
-                                <div class='cursor-pointer hover:bg-red-500 flex gap-5 py-2 px-4 rounded' title='Remove Item' onClick={() => remove_item(i())}>
-                                    <span class='flex-10 font-bold'>{item.title}</span>
-                                    <span class='flex-2'>{item.quantity}</span>
-                                    <span class='flex-2'>{format_currency(item.rate)}</span>
-                                    <span class='flex-2'>{format_currency(item.quantity * item.rate)}</span>
+                <div class='h-199 flex preview flex-1 flex-col'>
+                    <h2 class='whitespace-nowrap text-center font-bold text-2xl text-slate-800'>Preview</h2>
+                    <div class='overflow-auto flex-1 border m-5 rounded-xs bg-white p-5 text-slate-800'>
+                        <div class='flex flex-col gap-7 min-w-160'>
+                            <div class='flex justify-between'>
+                                <h3 class='text-2xl font-bold'>{state.name === '' ? 'Your Name' : state.name}</h3>
+                                <div class='flex flex-col'>
+                                    <h2 class='text-4xl'>INVOICE</h2>
+                                    <span class='self-end text-xl text-gray-700'>#{state.invoice_no}</span>
                                 </div>
-                            }</For>
+                            </div>
+                            <div class='flex justify-between'>
+                                <div>
+                                    <h2 class='text-gray-700'>Bill To:</h2>
+                                    <div>
+                                        <h2 class='font-bold'>{state.recipient_title === '' ? 'Recipient Title' : state.recipient_title}</h2>
+                                        <p class='text-wrap w-70 whitespace-pre-wrap'>{state.recipient_address === '' ? 'Recipient Address' : state.recipient_address}</p>
+                                    </div>
+                                </div>
+                                <div class='flex-2 flex gap-5 justify-end'>
+                                    <div class='flex flex-col'>
+                                        <label class='text-gray-700 self-end'>Date:</label>
+                                        <label class='text-gray-700 self-end'>Due Date:</label>
+                                        <label class='mt-1 font-bold text-lg self-end'>Balance Due:</label>
+                                    </div>
+                                    <div class='flex flex-col'>
+                                        <span class='self-end'>{state.date.toString().split(' ').slice(0, 4).join(' ')}</span>
+                                        <span class='font-bold self-end'>{state.due_date.toString().split(' ').slice(0, 4).join(' ')}</span>
+                                        <span class='mt-1 font-bold text-lg self-end'>{format_currency(state.balance_due)}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='flex flex-col'>
+                                <div class='flex bg-gray-900 text-white gap-5 py-2 px-5 rounded'>
+                                    <span class='flex-10'>Item</span>
+                                    <span class='flex-2'>Quantity</span>
+                                    <span class='flex-2 border-r pl-1'>Rate</span>
+                                    <span class='flex-2'>Amount</span>
+                                </div>
+                                <div class='flex-1'>
+                                    <For each={state.items}>{(item, i) =>
+                                        <div class='cursor-pointer hover:bg-red-500 flex gap-5 py-2 px-4 rounded' title='Remove Item' onClick={() => remove_item(i())}>
+                                            <span class='flex-10 font-bold'>{item.title}</span>
+                                            <span class='flex-2'>{item.quantity}</span>
+                                            <span class='flex-2'>{format_currency(item.rate)}</span>
+                                            <span class='flex-2'>{format_currency(item.quantity * item.rate)}</span>
+                                        </div>
+                                    }</For>
+                                </div>
+                            </div>
+                            <div class='flex justify-end p-5 gap-10'>
+                                <div class='text-gray-700'>Total:</div>
+                                <div class=''>{format_currency(state.total)}</div>
+                            </div>
                         </div>
                     </div>
-                    <div class='flex justify-end p-5 gap-10'>
-                        <div class='text-gray-700'>Total:</div>
-                        <div class=''>{format_currency(state.total)}</div>
-                    </div>
-                </div>
-                <div class='flex p-5 justify-center'>
+                    <div class='flex p-5 justify-center'>
                     <button class="cursor-pointer hover:underline hover:bg-emerald-700 font-bold text-slate-100 text-xl lg:text-2xl bg-emerald-800 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
                 </div>
             </div>
