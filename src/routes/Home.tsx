@@ -1,5 +1,6 @@
 import { For } from "solid-js";
 import { useState } from "../state/State";
+import { A } from "@solidjs/router";
 
 export const format_currency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -34,9 +35,10 @@ export default function Home() {
 
     return (<>
     <div class='flex flex-col'>
-        <header role="banner" class='h-15 lg:h-20 flex bg-pink-900 p-3 drop-shadow-lg drop-shadow-cyan-500/50 justify-center'>
-        <nav role="navigation" class='text-cyan-50 font-bold text-xl md:text-2xl lg:text-3xl self-center'>
-            Just Print Invoice
+        <header role="banner" class='h-15 lg:h-20 flex bg-purple-800 p-3 drop-shadow-lg drop-shadow-cyan-500/70 justify-center'>
+        <nav role="navigation" class='gap-8 flex font-bold text-xl md:text-2xl lg:text-3xl self-center'>
+            <img alt="Logo" class="h-14 border-cyan-100 border-2 rounded-xl" src="./favicon.png"></img>
+            <A class='self-center text-pink-400' href="/">Just Print <span class="text-cyan-300">Invoice</span></A>
         </nav>
         </header>
         <main role="main" class='min-h-[calc(100vh-90px)] flex flex-1 flex-col xl:flex-row bg-gray-200'>
