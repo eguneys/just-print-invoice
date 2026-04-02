@@ -110,7 +110,7 @@ export default function Home() {
                     </script>
                     */}
                 </div>
-            <div class='h-199 flex preview flex-1 flex-col'>
+            <div class='h-199 min-w-160 flex preview flex-1 flex-col'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Preview</h2>
                 <div class='overflow-auto flex-1 flex flex-col gap-7 border m-5 rounded-xs bg-white p-5 text-slate-800'>
                     <div class='flex justify-between'>
@@ -132,12 +132,12 @@ export default function Home() {
                             <div class='flex flex-col'>
                                 <label class='text-gray-700 self-end'>Date:</label>
                                 <label class='text-gray-700 self-end'>Due Date:</label>
-                                <label class='mt-1 font-bold text-xl self-end'>Balance Due:</label>
+                                <label class='mt-1 font-bold text-lg self-end'>Balance Due:</label>
                             </div>
                             <div class='flex flex-col'>
                                 <span class='self-end'>{state.date.toString().split(' ').slice(0, 4).join(' ')}</span>
                                 <span class='font-bold self-end'>{state.due_date.toString().split(' ').slice(0, 4).join(' ')}</span>
-                                <span class='mt-1 font-bold text-xl self-end'>{format_currency(state.balance_due)}</span>
+                                <span class='mt-1 font-bold text-lg self-end'>{format_currency(state.balance_due)}</span>
                             </div>
                         </div>
                     </div>
