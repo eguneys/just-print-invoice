@@ -8,3 +8,8 @@
 - [ ] Test it out
 - [ ] Get organic traffic
 - [ ] Apply for Google Ads
+
+
+- [ ] Templates
+- [ ] Themes
+- [ ] Presets (saved state)
