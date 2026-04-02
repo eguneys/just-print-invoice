@@ -37,7 +37,7 @@ export default function Home() {
     <div class='flex flex-col'>
         <header role="banner" class='h-15 lg:h-20 flex bg-purple-800 p-3 drop-shadow-lg drop-shadow-cyan-500/70 justify-center'>
         <nav role="navigation" class='gap-8 flex font-bold text-xl md:text-2xl lg:text-3xl self-center'>
-            <img alt="Logo" class="h-14 border-cyan-100 border-2 rounded-xl" src="./favicon.png"></img>
+            <img alt="Logo" class="h-12 md:h-13 lg:h-15 border-cyan-100 border-2 rounded-xl" src="./favicon.png"></img>
             <A class='self-center text-pink-400' href="/">Just Print <span class="text-cyan-300">Invoice</span></A>
         </nav>
         </header>
