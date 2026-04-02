@@ -178,12 +178,12 @@ export default function Home() {
 
 export const Footer = () => {
     return (<>
-        <footer class='text-gray-800 pt-15 pb-20 flex justify-center items-center bg-gray-200 gap-5'>
+        <footer class='text-gray-800 pt-15 pb-20 flex flex-col sm:flex-row justify-center items-center bg-gray-200 gap-5'>
             <div class='flex items-center gap-4'>
                 <A href="/"><img alt="Logo" class="h-10 border-cyan-100 border-2 rounded-xl" src="./favicon.png"></img></A>
                 <span>© 2026 JustPrintInvoice<span class='text-gray-500'>.com</span></span>
             </div>
-            <div class='flex gap-4'>
+            <div class='flex gap-4 flex-col sm:flex-row'>
                 <A class="hover:underline hover:text-slate-900" href="/terms">Terms</A>
                 <A class="hover:underline hover:text-slate-900" href="/privacy">Privacy</A>
                 <A class="hover:underline hover:text-slate-900" href="/about">About</A>
