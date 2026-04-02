@@ -78,7 +78,7 @@ export default function Home() {
                         </div>
                         <div class='flex flex-col self-end'>
                             <label class='text-xs'>Invoice No:</label>
-                            <input min={1} autocomplete="false" id="InvoiceNo" class='w-30 border rounded-sm  text-xl p-2' type='number' title='Invoice No' placeholder="Invoice No" value={state.invoice_no} onChange={e => set_invoice_no(parseInt(e.target.value))}></input>
+                            <input min={1} autocomplete="false" id="InvoiceNo" class='w-35 border rounded-sm  text-xl p-2' type='number' title='Invoice No' placeholder="Invoice No" value={state.invoice_no} onChange={e => set_invoice_no(parseInt(e.target.value))}></input>
                         </div>
                     </div>
                     <div class='flex flex-col gap-2'>
@@ -112,7 +112,7 @@ export default function Home() {
                     </script>
                     */}
                 </div>
-                <div class='h-199 flex preview flex-1 flex-col'>
+                <div class='h-199 max-h-190 flex preview flex-1 flex-col'>
                     <h2 class='whitespace-nowrap text-center font-bold text-2xl text-slate-800'>Preview</h2>
                     <div class='overflow-auto flex-1 border m-5 rounded-xs bg-white p-5 text-slate-800'>
                         <div class='flex flex-col gap-7 min-w-160'>

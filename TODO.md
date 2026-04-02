@@ -1,9 +1,10 @@
 - [x] Responsive Website
 - [x] Seo index.html
+- [x] Create Logo public/logo-big.png
+- [x] Add ads.txt
 - [ ] Link to Github
 - [ ] Terms of Service
 - [ ] Privacy Policy
 - [ ] Test it out
-- [ ] Create Logo public/logo-big.png
-- [ ] Add ads.txt
+- [ ] Get organic traffic
 - [ ] Apply for Google Ads
