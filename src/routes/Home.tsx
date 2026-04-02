@@ -29,7 +29,7 @@ export default function Home() {
     }} ] = useState()
 
     const goto_print_page = () => {
-        window.location.assign('/print')
+        window.location.href = 'print'
     }
 
     return (<>
@@ -39,7 +39,7 @@ export default function Home() {
             Just Print Invoice
         </nav>
         </header>
-        <main role="main" class='flex flex-1 flex-col lg:flex-row bg-gray-200'>
+        <main role="main" class='flex flex-1 flex-col md:flex-row bg-gray-200'>
                 <div class='flex bg-gray-900 text-white self-center'>
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8375052900987944"
                         crossorigin="anonymous"></script>
@@ -63,7 +63,7 @@ export default function Home() {
                     <input autocomplete="false" id="Recipient" class='border rounded-sm  text-xl p-2' type='text' title='Recipient Title' placeholder="Recipient Title" value={state.recipient_title} onInput={e => set_recipient_title(e.target.value)}></input>
                     <span class='text-xs'>Recipient Address:</span>
                     <textarea id="RecipientAddress" rows={5} class='border rounded-sm  text-xl p-2 resize-none' title='Recipient Address' placeholder="Recipient Address" value={state.recipient_address} onInput={e => set_recipient_address(e.target.value)}></textarea>
-                    <div class='flex gap-2 justify-end flex-col lg:flex-row'>
+                    <div class='flex gap-2 justify-end flex-col md:flex-row'>
                         <div class="flex-1"></div>
                         <div class='flex p-2 flex-row bg-blue-400 rounded'>
                             <label class='self-center'>Date:</label>
@@ -143,7 +143,7 @@ export default function Home() {
                         <div class='flex bg-gray-900 text-white gap-5 py-2 px-5 rounded'>
                             <span class='flex-10'>Item</span>
                             <span class='flex-2'>Quantity</span>
-                            <span class='flex-2 border-r'>Rate</span>
+                            <span class='flex-2 border-r pl-1'>Rate</span>
                             <span class='flex-2'>Amount</span>
                         </div>
                         <div class='flex-1'>
@@ -163,7 +163,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div class='flex p-5 justify-center'>
-                    <button class="cursor-pointer hover:underline hover:bg-emerald-700 font-bold text-slate-100 text-xl bg-emerald-800 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
+                    <button class="cursor-pointer hover:underline hover:bg-emerald-700 font-bold text-slate-100 text-2xl lg:text-3xl bg-emerald-800 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
                 </div>
             </div>
         </main>
