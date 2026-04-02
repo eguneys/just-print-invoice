@@ -35,12 +35,8 @@ export default function Home() {
 
     return (<>
     <div class='flex flex-col'>
-        <header role="banner" class='h-15 lg:h-20 flex bg-purple-800 p-3 drop-shadow-lg drop-shadow-cyan-500/70 justify-center'>
-        <nav role="navigation" class='gap-8 flex font-bold text-xl md:text-2xl lg:text-3xl self-center'>
-            <img alt="Logo" class="h-12 md:h-13 lg:h-15 border-cyan-100 border-2 rounded-xl" src="./favicon.png"></img>
-            <A class='self-center text-pink-400' href="/">Just Print <span class="text-cyan-300">Invoice</span></A>
-        </nav>
-        </header>
+        <Header/>
+
         <main role="main" class='min-h-[calc(100vh-90px)] flex flex-1 flex-col xl:flex-row bg-gray-200'>
                 <div class='flex bg-gray-900 text-white self-center'>
                     {/*
@@ -173,6 +169,40 @@ export default function Home() {
                 </div>
             </div>
         </main>
+
+
+<Footer/>
 </div>
+    </>)
+}
+
+export const Footer = () => {
+    return (<>
+        <footer class='text-gray-800 pt-15 pb-20 flex justify-center items-center bg-gray-200 gap-5'>
+            <div class='flex items-center gap-4'>
+                <A href="/"><img alt="Logo" class="h-10 border-cyan-100 border-2 rounded-xl" src="./favicon.png"></img></A>
+                <span>© 2026 JustPrintInvoice<span class='text-gray-500'>.com</span></span>
+            </div>
+            <div class='flex gap-4'>
+                <A class="hover:underline hover:text-slate-900" href="/terms">Terms</A>
+                <A class="hover:underline hover:text-slate-900" href="/privacy">Privacy</A>
+                <A class="hover:underline hover:text-slate-900" href="/about">About</A>
+                <A class="hover:underline hover:text-slate-900" href="https://github.com/eguneys/just-print-invoice">Github</A>
+            </div>
+        </footer>
+    </>)
+}
+
+
+export function Header() {
+    return (<>
+        <header role="banner" class='h-15 lg:h-20 flex bg-purple-800 p-3 drop-shadow-lg drop-shadow-cyan-500/70 justify-center'>
+            <nav role="navigation" class='gap-8 flex font-bold text-xl md:text-2xl lg:text-3xl self-center'>
+                <A href="/">
+                    <img alt="Logo" class="h-12 md:h-13 lg:h-15 border-cyan-100 border-2 rounded-xl" src="./favicon.png"></img>
+                </A>
+                <A class='self-center text-pink-400' href="/">Just Print <span class="text-cyan-300">Invoice</span></A>
+            </nav>
+        </header>
     </>)
 }

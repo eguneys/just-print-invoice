@@ -7,6 +7,7 @@
 - [ ] Privacy Policy
 - [ ] Test it out
 - [ ] Get organic traffic
+- [ ] Marketing Publish on Reddit
 - [ ] Apply for Google Ads
 
 
