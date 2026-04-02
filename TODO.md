@@ -12,4 +12,4 @@
 
 - [ ] Templates
 - [ ] Themes
-- [ ] Presets (saved state)
+- [ ] Presets - Invoice History
