@@ -34,16 +34,16 @@ export default function Home() {
 
     return (<>
     <div class='flex flex-col'>
-        <header role="banner" class='h-[90px] flex bg-pink-900 p-3 drop-shadow-lg drop-shadow-cyan-500/50 justify-center'>
-        <nav role="navigation" class='text-cyan-50 font-bold text-3xl md:text-4xl lg:text-5xl self-center'>
+        <header role="banner" class='h-15 lg:h-20 flex bg-pink-900 p-3 drop-shadow-lg drop-shadow-cyan-500/50 justify-center'>
+        <nav role="navigation" class='text-cyan-50 font-bold text-xl md:text-2xl lg:text-3xl self-center'>
             Just Print Invoice
         </nav>
         </header>
-        <main role="main" class='flex flex-1 flex-col md:flex-row bg-gray-200'>
+        <main role="main" class='min-h-[calc(100vh-90px)] flex flex-1 flex-col md:flex-row bg-gray-200'>
                 <div class='flex bg-gray-900 text-white self-center'>
+                    {/*
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8375052900987944"
                         crossorigin="anonymous"></script>
-                    {/*<!-- side-left -->*/}
                     <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-8375052900987944"
@@ -53,6 +53,7 @@ export default function Home() {
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({ });
                     </script>
+                    */}
             </div>
             <div class='fields flex-1'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Fields</h2>
@@ -73,7 +74,7 @@ export default function Home() {
                             <label class='self-center'>Due Date:</label>
                             <input class='cursor-pointer p-2' id="DueDate" type='date' title='Due Date' value={state.due_date.toISOString().split('T')[0]} onInput={e => set_due_date(new Date(e.target.value))}></input>
                         </div>
-                        <div class='flex flex-col'>
+                        <div class='flex flex-col self-end'>
                             <label class='text-xs'>Invoice No:</label>
                             <input min={1} autocomplete="false" id="InvoiceNo" class='w-30 border rounded-sm  text-xl p-2' type='number' title='Invoice No' placeholder="Invoice No" value={state.invoice_no} onChange={e => set_invoice_no(parseInt(e.target.value))}></input>
                         </div>
@@ -95,9 +96,9 @@ export default function Home() {
                 </div>
             </div>
                 <div class='flex bg-gray-900 text-white self-center'>
+                    {/*
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8375052900987944"
                         crossorigin="anonymous"></script>
-                    {/*<!-- side-left -->*/}
                     <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-8375052900987944"
@@ -107,10 +108,11 @@ export default function Home() {
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({ });
                     </script>
-            </div>
-            <div class='h-[calc(100vh-90px)] flex preview flex-1 flex-col'>
+                    */}
+                </div>
+            <div class='h-199 flex preview flex-1 flex-col'>
                 <h2 class='text-center font-bold text-2xl text-slate-800'>Preview</h2>
-                <div class=' overflow-auto flex-1 flex flex-col gap-7 border m-5 rounded-xs bg-white p-5 text-slate-800'>
+                <div class='overflow-auto flex-1 flex flex-col gap-7 border m-5 rounded-xs bg-white p-5 text-slate-800'>
                     <div class='flex justify-between'>
                         <h3 class='text-2xl font-bold'>{state.name === '' ? 'Your Name' : state.name}</h3>
                         <div class='flex flex-col'>
@@ -163,7 +165,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div class='flex p-5 justify-center'>
-                    <button class="cursor-pointer hover:underline hover:bg-emerald-700 font-bold text-slate-100 text-2xl lg:text-3xl bg-emerald-800 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
+                    <button class="cursor-pointer hover:underline hover:bg-emerald-700 font-bold text-slate-100 text-xl lg:text-2xl bg-emerald-800 px-3 py-2 rounded-sm" onClick={goto_print_page}>Goto Your Invoice Page <small>And Press Print as PDF <span class='text-xs'>(Ctrl+P)</span></small></button>
                 </div>
             </div>
         </main>
